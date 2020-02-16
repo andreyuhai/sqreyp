@@ -1,0 +1,26 @@
+<div class="container vertical-center">
+  <div class="container" id="wrapper">
+    <div class="row" id="logo">
+      <span class="mx-auto text-center">SQREYP</span>
+    </div>
+    <div class="row">
+      <div class="card border-0 shadow mx-auto">
+        <div class="card-header bg-transparent text-center" id="header">DLI PA Scraper</div>
+        <div class="card-body p-5">
+          <% if flash[:notice] %>
+            <div class="alert alert-info"><%= flash[:notice] %></div>
+          <% end %>
+
+          <%= render 'form', scrape_request: @scrape_request %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).on('change', '.custom-file-input', function (event) {
+        $(this).next('.custom-file-label').html(event.target.files[0].name);
+    })
+</script>

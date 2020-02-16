@@ -1,0 +1,31 @@
+<%= form_with(model: scrape_request, local: true) do |form| %>
+  <% if scrape_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scrape_request.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% scrape_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'form-control', placeholder: 'Enter email', required: true %>
+  </div>
+
+
+  <div class="form-group">
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <%= form.file_field :file, direct_upload: true, class: 'custom-file-input', required: true %>
+        <%= form.label 'Choose file', class: 'custom-file-label' %>
+      </div>
+      <div class="input-group-append">
+        <%= button_tag 'Create Scrape Request', {class: 'btn btn-outline-secondary', data: {disable_with: '<i class="fas fa-spinner fa-spin"></i>'}} %>
+      </div>
+    </div>
+  </div>
+<% end %>

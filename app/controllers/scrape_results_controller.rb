@@ -1,0 +1,3 @@
+class ScrapeResultsController < ApplicationController
+
+end
