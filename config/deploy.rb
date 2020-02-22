@@ -2,7 +2,7 @@
 lock "~> 3.12.0"
 
 set :application, "sqreyp"
-set :repo_url, "ggit@github.com:andreyuhai/sqreyp.git"
+set :repo_url, "git@github.com:andreyuhai/sqreyp.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
