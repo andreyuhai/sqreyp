@@ -51,4 +51,4 @@ production:
   <<: *default
   database: sqreyp_production
   username: sqreyp
-  password: <%= ENV.fetch('SQREYP_DATABASE_PASSWORD') %>
+  password: <%= ENV.fetch("SQREYP_DATABASE_PASSWORD") %>
