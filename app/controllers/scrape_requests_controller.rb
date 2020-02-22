@@ -9,6 +9,8 @@ class ScrapeRequestsController < ApplicationController
     if @scrape_request.save
       redirect_to root_path, notice: %( Your scrape request has been successfully queued up!
                                     You should receive a confirmation email.)
+      ScrapeNotifierMailer.send_scrape_request_email(@scrape_request).deliver
+      DlipaScrapeJob.perform_later(@scrape_request)
     else
       redirect_to root_path, alert: 'Something went wrong! Please try again.'
     end

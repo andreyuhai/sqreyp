@@ -1,0 +1,1 @@
+require 'dli_pa_scraper/dli-pa-scraper'
