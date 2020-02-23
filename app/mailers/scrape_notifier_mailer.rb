@@ -7,7 +7,8 @@ class ScrapeNotifierMailer < ApplicationMailer
   end
 
   def send_scrape_result_email(scrape_request)
-    @download_link = Rails.application.routes.url_helpers.polymorphic_url scrape_request.scrape_result.file
+    @download_link = Rails.application.routes.url_helpers.polymorphic_url(scrape_request.scrape_result.file,
+                                                                          subdomain: 'sqreyp')
     mail(to: scrape_request.email,
          subject: 'Scrape result is ready!')
   end
